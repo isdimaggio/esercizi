@@ -13,21 +13,25 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 
-ESERCIZIO n.3 - Dati i valori come constante di base ed altezza del
-rettangolo calcolare e visualizzare l'area del rettangolo.
-08/10/2021 (Esercizio per casa)
+ESERCIZIO n.5 -  Prelevare in input il valore del raggio del cerchio
+e calcolarne perimetro ed area.
+09/10/2021 (Esercizio per casa)
 */
 
 #include <iostream>
+
+#define PI_GRECO 3.14
 
 using namespace std;
 
 int main()
 {
     // dichiarazione variabili
-    int base = 4;
-    int altezza = 5;
+    int raggio;
     //programma
-    cout << "L'area del rettangolo è " << base * altezza << endl;
+    cout << "Inserisci il raggio del cerchio: ";
+    cin >> raggio;
+    cout << "Il perimetro del cerchio è " << 2 * raggio * PI_GRECO << endl;
+    cout << "L'area del cerchio è " << (raggio * raggio) * PI_GRECO << endl;
     return 0;
 }

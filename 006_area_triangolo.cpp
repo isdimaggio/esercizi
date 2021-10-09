@@ -13,9 +13,9 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 
-ESERCIZIO n.3 - Dati i valori come constante di base ed altezza del
-rettangolo calcolare e visualizzare l'area del rettangolo.
-08/10/2021 (Esercizio per casa)
+ESERCIZIO n.6 -  Prelevare in input i valori di base ed altezza di un
+triangolo e calcolarne l'area.
+09/10/2021 (Esercizio per casa)
 */
 
 #include <iostream>
@@ -25,9 +25,12 @@ using namespace std;
 int main()
 {
     // dichiarazione variabili
-    int base = 4;
-    int altezza = 5;
+    int base, altezza;
     //programma
-    cout << "L'area del rettangolo è " << base * altezza << endl;
+    cout << "Inserisci la base del triangolo: ";
+    cin >> base;
+    cout << "Inserisci l' altezza del triangolo: ";
+    cin >> altezza;
+    cout << "L'area del triangolo è " << (base * altezza)/2 << endl;
     return 0;
 }
