@@ -23,5 +23,15 @@ using namespace std;
 
 int main()
 {
+	// dichiarazione variabili
+	int a, b;
+	// programma
+	cout << "EQUAZIONE: x+a-b=0" << endl;								// stampiamo il tipo di equazione che il programma risolve
+	cout << "Inserisci il primo coefficente (a): ";						// Chiediamo in input il primo coefficiente
+	cin >> a;															
+	cout << "Inserisci il secondo coefficente (b): ";					// Chiediamo in input il secondo coefficiente
+	cin >> b;
+	cout << "DA RISOLVERE: " << "x+" << a << "-" << b << "=0" << endl;	// Stampiamo l'equazione da risolvere
+	cout << "RISULTATO: x=" << -a+b << endl;							// Calcoliamo e stampiamo il risultato
     return 0;
 }
