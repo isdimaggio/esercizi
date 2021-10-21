@@ -31,11 +31,13 @@ int main()
     risultato = base;												
 	cout << "Inserisci l'esponente: ";
 	cin >> esponente;
-    if(esponente < 2 | base < 2){
+    if(esponente < 2 | base < 2)
+    {
         cout << "Inserisci dati validi." << endl; // troppo pigri per controllare casi speciali
         return 0;
     }
-    for(int i = 1; i < esponente; i++){
+    for(int i = 1; i < esponente; i++)
+    {
         risultato = risultato * base;
     }
     cout << "Il risultato è: " << risultato << endl;
