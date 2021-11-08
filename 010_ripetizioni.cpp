@@ -13,9 +13,9 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 
-ESERCIZIO n.9 -  L'utente inserisce [n] numeri, trova il massimo di quelli
-quando l'utente immette 0.
-21/10/2021 (Esercitazione in classe)
+ESERCIZIO n.10 -  Stampa n volte una stringa di testo, le ripetizioni
+le decide l'utente in input.
+28/10/2021 (Esercitazione in classe)
 */
 
 #include <iostream>
@@ -25,23 +25,16 @@ using namespace std;
 int main()
 {
     // dichiarazione variabili
-	int n = 1;
-    int max = 0;
-    int i = 0;
+    int n = 0;
     // programma
-    while(n != 0)
-    {
-        cout << "Inserisci un numero (se == 0 il programma termina): ";						
-	    cin >> n;
-        if(n == 0)
-        {
-            break; // se è zero rompi il ciclo
-        }   
-        i++; // incrementa il counter dei numeri inseriti
-        if(n > max)
-        {
-            max = n; // se hai trovato un nuovo massimo memorizza
-        }
+    cout << "Inserisci un numero (se == 0 il programma termina): ";
+    cin >> n;
+    if(n == 0){
+        return 0;
     }
-    cout << "Dei " << i << " numeri che hai inserito il massimo è: " << max << endl;
+    for(int i = 1; i <= n; i++){
+        //stampa
+	    cout << "Buongiornissimo" << endl;
+    }
+    return 0;
 }

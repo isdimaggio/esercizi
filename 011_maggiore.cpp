@@ -13,9 +13,8 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 
-ESERCIZIO n.9 -  L'utente inserisce [n] numeri, trova il massimo di quelli
-quando l'utente immette 0.
-21/10/2021 (Esercitazione in classe)
+ESERCIZIO n.11 -  Dati due numeri determina il maggiore e stampalo
+08/11/2021 (Esercitazione in laboratorio)
 */
 
 #include <iostream>
@@ -25,23 +24,17 @@ using namespace std;
 int main()
 {
     // dichiarazione variabili
-	int n = 1;
-    int max = 0;
-    int i = 0;
+    int a, b = 0;
     // programma
-    while(n != 0)
-    {
-        cout << "Inserisci un numero (se == 0 il programma termina): ";						
-	    cin >> n;
-        if(n == 0)
-        {
-            break; // se è zero rompi il ciclo
-        }   
-        i++; // incrementa il counter dei numeri inseriti
-        if(n > max)
-        {
-            max = n; // se hai trovato un nuovo massimo memorizza
-        }
+    cout << "Inserisci il primo numero: ";
+    cin >> a;
+    cout << "Inserisci il secondo numero: ";
+    cin >> b;
+
+    if(a > b){
+        cout << "Il numero maggiore è il primo, ovvero " << a << endl;
+    }else{
+        cout << "Il numero maggiore è il secondo, ovvero " << b << endl;
     }
-    cout << "Dei " << i << " numeri che hai inserito il massimo è: " << max << endl;
+    return 0;
 }
