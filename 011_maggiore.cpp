@@ -30,10 +30,16 @@ int main()
     cin >> a;
     cout << "Inserisci il secondo numero: ";
     cin >> b;
-
-    if(a > b){
+    if(a == b)
+    {
+        cout << "I due numeri sono uguali" << endl;
+    }
+    else if(a > b)
+    {
         cout << "Il numero maggiore è il primo, ovvero " << a << endl;
-    }else{
+    }
+    else
+    {
         cout << "Il numero maggiore è il secondo, ovvero " << b << endl;
     }
     return 0;
