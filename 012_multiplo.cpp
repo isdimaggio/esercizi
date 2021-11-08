@@ -13,7 +13,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 
-ESERCIZIO n.11 -  Dati due numeri determina il maggiore e stampalo
+ESERCIZIO n.12 -  Dati due numeri verifica che il secondo sia multiplo del primo
 08/11/2021 (Esercitazione in laboratorio)
 */
 
@@ -30,20 +30,13 @@ int main()
     cin >> a;
     cout << "Inserisci il secondo numero: ";
     cin >> b;
-    if(a == b)
+    if((a % b) == 0)
     {
-        cout << "I due numeri sono uguali" << endl;
+        cout << "Il secondo numero è multiplo del primo :)" << endl;
     }
     else
     {
-        if(a > b)
-        {
-            cout << "Il numero maggiore è il primo, ovvero " << a << endl;
-        }
-        else
-        {
-            cout << "Il numero maggiore è il secondo, ovvero " << b << endl;
-        }
+        cout << "Il secondo numero non è multiplo del primo :(" << endl;
     }
     return 0;
 }
