@@ -33,14 +33,15 @@ int main()
     if(a == b)
     {
         cout << "I due numeri sono uguali" << endl;
-    }
-    else if(a > b)
-    {
-        cout << "Il numero maggiore è il primo, ovvero " << a << endl;
-    }
-    else
-    {
-        cout << "Il numero maggiore è il secondo, ovvero " << b << endl;
+    }else{
+        if(a > b)
+        {
+            cout << "Il numero maggiore è il primo, ovvero " << a << endl;
+        }
+        else
+        {
+            cout << "Il numero maggiore è il secondo, ovvero " << b << endl;
+        }
     }
     return 0;
 }
