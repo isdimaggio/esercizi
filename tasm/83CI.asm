@@ -17,9 +17,9 @@ DATA SEGMENT
     NUM1 DB ?
     NUM2 DB ?
     SOM DB ?
-    MSG1 DB 13,10,'Inserire il primo numero: ,$'
-    MSG2 DB 13,10,'Inserire il secondo numero: ,$'
-    MSG3 DB 13,10,'La somma è: ,$'
+    MSG1 DB 13,10,'Inserire il primo numero: $'
+    MSG2 DB 13,10,'Inserire il secondo numero: $'
+    MSG3 DB 13,10,'La somma è: $'
 DATA ENDS
 CODE SEGMENT
 ASSUME CS:CODE, DS:DATA
