@@ -1,5 +1,5 @@
 #/bin/sh
-g++ -o /tmp/run.out $1 
+gcc -o /tmp/run.out $1 
 chmod +x /tmp/run.out
 /tmp/run.out
 rm -r /tmp/run.out
