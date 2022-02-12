@@ -94,13 +94,13 @@ void restoreConsole(void) {
 
 void renderPixel(int pixelCode, bool enableSnow, bool enableDecoration);
 
-int main()
+int main(void)
 {
     /* Variabili globali, configurazione del generatore */
     int treeWidth;          // larghezza dell'albero
     int grassHeight;        // altezza dell'erba
-    bool enableDecoration; // quante decorazioni devono essere inserite randomicamente
-    bool enableSnow;       // intensità della neve
+    bool enableDecoration;  // se attivare le decorazioni
+    bool enableSnow;        // se attivare la neve
 
     /* Variabili globali, parametri per il rendering */
     int treeSideLenght;     // lunghezza di un lato dell'albero
