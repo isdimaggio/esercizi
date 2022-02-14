@@ -19,7 +19,7 @@ DATA SEGMENT
     SOM DB ?
     MSG1 DB 13,10,'Inserire il primo numero: $'
     MSG2 DB 13,10,'Inserire il secondo numero: $'
-    MSG3 DB 13,10,'La somma è: $'
+    MSG3 DB 13,10,'La somma e": $'
 DATA ENDS
 CODE SEGMENT
 ASSUME CS:CODE, DS:DATA
@@ -45,7 +45,7 @@ Start:  MOV AX, DATA
         SUB AL, 30H
         MOV AH, 0 ; ripuliamo AH
         ADD AL, BL ; sommiamo il valore reale della prima cifra alla seconda appena acquisita
-        MOV VAL1, AL ; memorizziamo
+        MOV NUM1, AL ; memorizziamo
         ; ////// output di MSG2 //////
         LEA DX, MSG2
         MOV AH, 9
@@ -66,9 +66,9 @@ Start:  MOV AX, DATA
         SUB AL, 30H
         MOV AH, 0 ; ripuliamo AH
         ADD AL, BL ; sommiamo il valore reale della prima cifra alla seconda appena acquisita
-        MOV VAL2, AL ; memorizziamo
+        MOV NUM2, AL ; memorizziamo
         ; ////// Addizione dei due valori appena memorizzati //////
-        MOV BL, VAL1 ; carichiamo in BL il valore 1
+        MOV BL, NUM1 ; carichiamo in BL il valore 1
         ADD AL, BL ; sommiamo il valore precedente caricato con quello del secondo addendo
                    ; già presente in AL
         MOV SOM, AL ; carichiamo in SOM la somma dei due valori appena calcolata
