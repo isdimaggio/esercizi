@@ -157,7 +157,8 @@ start:  MOV AX, DATA
         INT 21H
 
         ; --- OUTPUT PRIMA CIFRA RIS --- 
-        ; in AL già presente risultato
+        ; in AL già presente risultato  
+        MOV AL, RISU        ; carico risultato
         MOV BL, 10          ; costante divisione
         MOV AH, 0
         MOV DX, 0           ; aazzeriamo DX per bug divisione
@@ -176,7 +177,7 @@ start:  MOV AX, DATA
         INT 21H
 
         ; --- Output MSGQ ---
-        LEA DX, MSGR
+        LEA DX, MSGQ
         MOV AH, 9
         INT 21H
 
