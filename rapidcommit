@@ -1,0 +1,15 @@
+#!/bin/sh
+if [ -z "$1" ]
+then
+    echo "Usage: rapidcommit [date yyyy-mm-dd] [message \"message \"]"
+else
+    if [ -z "$2" ]
+    then
+        echo "Usage: rapidcommit [date yyyy-mm-dd] [message \"message \"]"
+    else
+	date=$(date +%H:%M:%S%:z)
+	export GIT_AUTHOR_DATE="$1T$date" && export GIT_COMMITTER_DATE="$1T$date"
+	git commit -m "$2" --date="$1T$date"
+    fi
+
+fi
