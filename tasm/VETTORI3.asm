@@ -17,7 +17,7 @@
 ;di farne la media e visualizzare il vettore al contrario
 
 DATA SEGMENT
-    DIMENSIONE  DB 0
+    DIMENSIONE  DB ?
     DIECI       DB 10
     VET         DB 20 DUP(0)
     SOMMA       DB 0
@@ -75,7 +75,6 @@ ALOAD:  LEA DX, MSG2
         
         ;----- Output prima cifra posizione vettore ------  
         MOV AX, SI              ; carico posizione (16 bit, usiamo solo 8)
-        MOV DX, 0               ; aazzeriamo DX per bug divisione
         DIV DIECI               ; RESTO in (A/B)H e QUOZIENTE in (A/B)L                     
         MOV BX, AX              ; salviamo tutti i valori che riutilizzeremo dopo
         MOV DL, AL              
@@ -128,7 +127,9 @@ ALOAD:  LEA DX, MSG2
         ;############# Calcolo della media ############# 
         MOV AX, 0
         MOV AL, SOMMA
-        DIV DIMENSIONE
+        MOV BL, DIMENSIONE
+        ADD BL, 1
+        DIV BL
         MOV MEDIA, AL
         
         ;############# Output della media #############
