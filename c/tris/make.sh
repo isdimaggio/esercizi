@@ -3,5 +3,4 @@ gcc \
 main.c \
 graphics.c \
 console.c \
-
-chmod +x tris
+game.c
