@@ -65,4 +65,3 @@ void TRIS_restore_console(void) {
     printf("\x1b[0m");
 }
 #endif
-
