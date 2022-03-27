@@ -27,6 +27,19 @@ limitations under the License.
 #define ENDL                "\n"        /* a capo */
 
 /*
+ * Function: TRIS_p2c
+ * ----------------------------
+ *   Converte il numero del player nel carattere corrispondente.
+ *
+ *   player: bit del player (seleziona tra 0 ed 1)
+ *
+ *   returns: carattere corrispondente ad X o 0
+ */
+char* TRIS_p2c (
+    int player
+);
+
+/*
  * Function: TRIS_print_header
  * ----------------------------
  *   Stampa la testata della grafica su terminale
@@ -35,7 +48,6 @@ limitations under the License.
  *
  *   player: bit del player (seleziona tra 0 ed 1)
  *   playerName: array contentente nome del player
- *   playerNameLength: lunghezza del nome del player
  *   win: flag da impostare in caso di vittoria
  *
  *   returns: nothing
@@ -43,7 +55,6 @@ limitations under the License.
 void TRIS_print_header(
     int player,
     char playerName[],
-    int playerNameLength,
     bool win
 );
 
