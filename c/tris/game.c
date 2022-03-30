@@ -43,10 +43,11 @@ bool TRIS_set_grid(
 }
 
 int TRIS_winning_player(
-    int grid[9]
+    int grid[9],
+    bool debug_enabled
 ){
     // cerca in tutti i pattern
-    for(int i = 0; i < 9; i++){
+    for(int i = 0; i < 8; i++){
         if(
             grid[winPatternsA[i]] == grid[winPatternsB[i]] && 
             grid[winPatternsB[i]] == grid[winPatternsC[i]]
@@ -54,6 +55,16 @@ int TRIS_winning_player(
             // se trovato uno vincente ritorna il codice giocatore
             return grid[winPatternsA[i]];
         }
+        if(debug_enabled) fprintf(
+            stderr, "controllo pattern %d -> [%d][%d][%d] -> (%d)(%d)(%d) \n",
+            i,
+            winPatternsA[i],
+            winPatternsB[i],
+            winPatternsC[i],
+            grid[winPatternsA[i]],
+            grid[winPatternsB[i]],
+            grid[winPatternsC[i]]
+        );
     }
     return -1;
 }

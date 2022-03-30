@@ -36,7 +36,7 @@ char* TRIS_p2c (
 void TRIS_print_header(
     int player,
     char playerName[],
-    bool win
+    int win
 )
 {
     printf(COLOR_HEADER "TRIS by Vittorio Lo Mele (3Ci)" CRESET ENDL);
@@ -50,39 +50,43 @@ void TRIS_print_header(
         printf(COLOR_PLAYER0);
     }
     /* controlla vincita */
-    if (win)
+    if (win == 1)
     {
         printf("Complimenti %s, HAI VINTO!" CRESET ENDL, playerName);
     }
-    else
+    else if (win == 0)
     {
         printf("%s, è il tuo turno..." CRESET ENDL, playerName);
+    }
+    else
+    {
+        printf(CRESET "La partita termina in pareggio :(" ENDL);
     }
 }
 
 void TRIS_print_grid(
     int grid[9]
 ){
-    printf("  ╒═══╤═══╤═══╕" ENDL);
+    printf("╒═1═╤═2═╤═3═╕" ENDL);
     printf(
-        "1 │ %s │ %s │ %s │" ENDL,
+        "│ %s │ %s │ %s │" ENDL,
         TRIS_p2c(grid[0]),
         TRIS_p2c(grid[1]),
         TRIS_p2c(grid[2])
     );
-    printf("  ├───┼───┼───┤" ENDL);
+    printf("├─4─┼─5─┼─6─┤" ENDL);
     printf(
-        "4 │ %s │ %s │ %s │" ENDL,
+        "│ %s │ %s │ %s │" ENDL,
         TRIS_p2c(grid[3]),
         TRIS_p2c(grid[4]),
         TRIS_p2c(grid[5])
     );
-    printf("  ├───┼───┼───┤" ENDL);
+    printf("├─7─┼─8─┼─9─┤" ENDL);
     printf(
-        "7 │ %s │ %s │ %s │" ENDL,
+        "│ %s │ %s │ %s │" ENDL,
         TRIS_p2c(grid[6]),
         TRIS_p2c(grid[7]),
         TRIS_p2c(grid[8])
     );
-    printf("  ╘═══╧═══╧═══╛" ENDL);
+    printf("╘═══╧═══╧═══╛" ENDL);
 }

@@ -55,7 +55,7 @@ char* TRIS_p2c (
 void TRIS_print_header(
     int player,
     char playerName[],
-    bool win
+    int win
 );
 
 /*

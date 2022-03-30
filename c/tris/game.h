@@ -46,11 +46,13 @@ bool TRIS_set_grid(
  *   ritorna -1
  *
  *   grid: array contenente la griglia
+ *   debug_enabled: se abilitare i messaggi di debug
  *
  *   returns: (int) numero player
  */
 int TRIS_winning_player(
-    int grid[9]
+    int grid[9],
+    bool debug_enabled
 );
 
 #endif
