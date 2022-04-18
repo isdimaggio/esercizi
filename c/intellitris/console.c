@@ -65,3 +65,12 @@ void TRIS_restore_console(void) {
     printf("\x1b[0m");
 }
 #endif
+
+void TRIS_delay(int millisec)
+{  
+    // Storing start time
+    clock_t start_time = clock();
+  
+    // looping till required time is not achieved
+    while (clock() < start_time + millisec);
+}

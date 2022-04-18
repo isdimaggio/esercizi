@@ -26,6 +26,7 @@ limitations under the License.
 #endif
 
 #include <stdio.h>
+#include <time.h>
 
 /*
  * Function: TRIS_setup_console
@@ -48,3 +49,14 @@ void TRIS_setup_console(void);
  *   returns: nothing
  */
 void TRIS_restore_console(void);
+
+/*
+ * Function: TRIS_delay
+ * ----------------------------
+ *   Pausa l'esecuzione del gioco per i millisecondi dati
+ * 
+ *   millisec: numero di millisecondi per cui fermarsi
+ *
+ *   returns: nothing
+ */
+void TRIS_delay(millisec);
