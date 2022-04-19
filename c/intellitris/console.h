@@ -59,4 +59,4 @@ void TRIS_restore_console(void);
  *
  *   returns: nothing
  */
-void TRIS_delay(millisec);
+void TRIS_delay(int millisec);
