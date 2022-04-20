@@ -3,4 +3,5 @@ gcc \
 main.c \
 graphics.c \
 console.c \
-game.c
+game.c \
+ai.c

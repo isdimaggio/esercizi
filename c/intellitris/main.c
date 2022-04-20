@@ -17,6 +17,7 @@ limitations under the License.
 #include "graphics.h"
 #include "console.h"
 #include "game.h"
+#include "ai.h"
 
 #include <stdbool.h>
 #include <string.h>
@@ -96,8 +97,8 @@ int main(
         if(debug_enabled) fprintf(stderr, "selezionato bot come secondo player \n");
 
         printf("\n --------------- BOT ----------------\n");
-        printf("1. bot easy\n");
-        printf("2. bot meno easy\n");
+        printf("1. bot stupido\n");
+        printf("2. bot easy\n");
 
         char tmpbc;
         do
@@ -109,14 +110,14 @@ int main(
         {
         case '1':
             selectedBot = 1;
-            strcpy(player2, "[bot easy]");
+            strcpy(player2, "[bot stupido]");
             break;
         case '2':
             selectedBot = 2;
-            strcpy(player2, "[bot meno easy]");
+            strcpy(player2, "[bot easy]");
             break;
         default:
-            printf("Scelta non valida, fallback su [bot easy] \n");   
+            printf("Scelta non valida, fallback su [bot stupido] \n");   
             selectedBot = 1;
             break;
         }
@@ -183,7 +184,8 @@ int main(
             break;
         }
 
-        if (selectedBot) 
+        // se bot attivo e suo turno
+        if (selectedBot && currentPlayer) 
         {
             // gioca il bot
             if(debug_enabled) fprintf(stderr, "--- \n chiedendo posizione inserimento (giocatore corrente %d) \n", currentPlayer);
@@ -191,11 +193,28 @@ int main(
             TRIS_delay(1000);
             
             // chiamata AI
-            TRIS_ai_wrapper
+            int pos = TRIS_ai_wrapper
             (
                 selectedBot, 
                 grid
             );
+
+            bool res = TRIS_set_grid
+            (
+                grid,
+                pos,
+                currentPlayer
+            );
+
+            if(!res) 
+            {
+                printf(
+                    "[!] Exception occurred: il bot %s ha provato a inserire una giocata nella cella %d gia occupata",
+                    player2,
+                    pos
+                );
+                return(0);
+            }
         }
         else
         {
