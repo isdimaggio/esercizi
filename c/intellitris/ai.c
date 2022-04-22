@@ -24,20 +24,20 @@ int TRIS_ai_wrapper
     switch (selectedBot)
     {
     case 1:
-        return ai1(grid);
+        return TRIS_internal_aiv1(grid);
         break;
     
     case 2:
-        return ai2(grid);
+        return TRIS_internal_aiv2(grid);
         break;
 
     default:
-        return ai1(grid);
+        return TRIS_internal_aiv1(grid);
         break;
     }
 }
 
-int ai1(int grid[9])
+int TRIS_internal_aiv1 (int grid[9])
 {
     // bot stupido
     // inserisce il suo segno nel primo posto disponibile
@@ -50,7 +50,7 @@ int ai1(int grid[9])
     }
 }
 
-int ai2(int grid[9])
+int TRIS_internal_aiv2 (int grid[9])
 {
     return 5; // WIP
 }

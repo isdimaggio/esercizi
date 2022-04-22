@@ -37,4 +37,8 @@ int TRIS_ai_wrapper
     int grid[9]
 );
 
+// internal functions
+int TRIS_internal_aiv1 (int grid[9]);
+int TRIS_internal_aiv1 (int grid[9])
+
 #endif
