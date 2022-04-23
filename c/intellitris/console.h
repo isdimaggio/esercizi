@@ -22,6 +22,7 @@ limitations under the License.
 #include <conio.h>
 #else
 #include <stdio.h>
+#include <unistd.h>
 #define clrscr() printf("\e[1;1H\e[2J")
 #endif
 

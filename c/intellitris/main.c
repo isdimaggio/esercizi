@@ -97,8 +97,8 @@ int main(
         if(debug_enabled) fprintf(stderr, "selezionato bot come secondo player \n");
 
         printf("\n --------------- BOT ----------------\n");
-        printf("1. bot stupido\n");
-        printf("2. bot easy\n");
+        printf("1. dumbfuck\n");
+        printf("2. lineblock\n");
 
         char tmpbc;
         do
@@ -110,11 +110,11 @@ int main(
         {
         case '1':
             selectedBot = 1;
-            strcpy(player2, "[bot stupido]");
+            strcpy(player2, "[dumbfuck]");
             break;
         case '2':
             selectedBot = 2;
-            strcpy(player2, "[bot easy]");
+            strcpy(player2, "[lineblock]");
             break;
         default:
             printf("Scelta non valida, fallback su [bot stupido] \n");   

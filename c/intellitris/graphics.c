@@ -64,9 +64,41 @@ void TRIS_print_header(
     }
 }
 
+#ifdef _WIN32
+
 void TRIS_print_grid(
     int grid[9]
 ){
+    printf("+-1-+-2-+-3-+" ENDL);
+    printf(
+        "| %s | %s | %s |" ENDL,
+        TRIS_p2c(grid[0]),
+        TRIS_p2c(grid[1]),
+        TRIS_p2c(grid[2])
+    );
+    printf("+-4-+-5-+-6-+" ENDL);
+    printf(
+        "| %s | %s | %s |" ENDL,
+        TRIS_p2c(grid[3]),
+        TRIS_p2c(grid[4]),
+        TRIS_p2c(grid[5])
+    );
+    printf("+-7-+-8-+-9-+" ENDL);
+    printf(
+        "| %s | %s | %s |" ENDL,
+        TRIS_p2c(grid[6]),
+        TRIS_p2c(grid[7]),
+        TRIS_p2c(grid[8])
+    );
+    printf("+---+---+---+" ENDL);
+}
+
+#else
+
+void TRIS_print_grid(
+    int grid[9]
+){
+    
     printf("╒═1═╤═2═╤═3═╕" ENDL);
     printf(
         "│ %s │ %s │ %s │" ENDL,
@@ -90,3 +122,5 @@ void TRIS_print_grid(
     );
     printf("╘═══╧═══╧═══╛" ENDL);
 }
+
+#endif

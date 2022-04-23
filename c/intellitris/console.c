@@ -66,11 +66,18 @@ void TRIS_restore_console(void) {
 }
 #endif
 
+#ifdef _WIN32
+
 void TRIS_delay(int millisec)
 {  
-    // Storing start time
-    clock_t start_time = clock();
-  
-    // looping till required time is not achieved
-    while (clock() < start_time + millisec);
+    Sleep(millisec)
 }
+
+#else
+
+void TRIS_delay(int millisec)
+{  
+    usleep(millisec * 1000);
+}
+
+#endif
