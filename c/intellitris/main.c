@@ -141,7 +141,7 @@ int main(
     if(debug_enabled) fprintf(stderr, "reset della variabile griglia, inzio gioco \n");
 
     // per tutte le giocate possibili
-    for (int i = 0; i < 9; i++)
+    for (int i = 0; i < 10; i++)
     {
         clrscr();
 
