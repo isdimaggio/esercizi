@@ -135,7 +135,7 @@ int main(
     // reset griglia
     for (int i = 0; i < 9; i++)
     {
-        grid[i] = -1;
+        grid[i] = 1;
     }
 
     if(debug_enabled) fprintf(stderr, "reset della variabile griglia, inzio gioco \n");
@@ -225,7 +225,7 @@ int main(
             {
                 if(debug_enabled) fprintf(stderr, "--- \n chiedendo posizione inserimento (giocatore corrente %d) \n", currentPlayer);
                 // input coordinate
-                printf("Dove inserisco %s? [1-9]: ", TRIS_p2c(currentPlayer));
+                printf("Dove inserisco %s? [1-9]: ", TRIS_p2c(currentPlayer+3));
                 scanf("%d", &pos);
                 pos--; // aggiusta da 0 ad 8
             } 

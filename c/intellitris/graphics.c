@@ -19,11 +19,11 @@ limitations under the License.
 char* TRIS_p2c (
     int player
 ){
-    if(player == 0)
+    if(player == 3)
     {
         return COLOR_PLAYER0 "0" CRESET;
     }
-    else if(player == 1)
+    else if(player == 4 || player == 5)
     {
         return COLOR_PLAYER1 "X" CRESET;
     }

@@ -30,9 +30,21 @@ bool TRIS_set_grid(
         return false; 
     }
     // controllo posizione vuota
-    if(grid[pos] == -1)
+    if(grid[pos] == 1)
     {
-        grid[pos] = player;
+        if(player == 0)
+        {
+            grid[pos] = 3;
+        }
+        else if (player == 1)
+        {
+            grid[pos] = 5;
+        }
+        else
+        {
+            grid[pos] = 1;
+        }
+        
         return true;
     }
     else
@@ -53,7 +65,13 @@ int TRIS_winning_player(
             grid[winPatternsB[i]] == grid[winPatternsC[i]]
         ){
             // se trovato uno vincente ritorna il codice giocatore
-            return grid[winPatternsA[i]];
+            if (grid[winPatternsA[i]] == 3)
+            {
+                return 0;
+            }else if (grid[winPatternsA[i]] == 5)
+            {
+                return 1;
+            }
         }
         if(debug_enabled) fprintf(
             stderr, "controllo pattern %d -> [%d][%d][%d] -> (%d)(%d)(%d) \n",

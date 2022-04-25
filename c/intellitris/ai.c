@@ -43,7 +43,7 @@ int TRIS_internal_aiv1 (int grid[9])
     // inserisce il suo segno nel primo posto disponibile
     for(int i = 0; i < 9; i++)
     {
-        if(grid[i] == -1)
+        if(grid[i] == 1)
         {
             return i;
         }
