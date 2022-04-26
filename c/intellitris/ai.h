@@ -40,5 +40,6 @@ int TRIS_ai_wrapper
 // internal functions
 int TRIS_internal_aiv1 (int grid[9]);
 int TRIS_internal_aiv2 (int grid[9]);
+int TRIS_internal_aiv3 (int grid[9]);
 
 #endif

@@ -99,6 +99,7 @@ int main(
         printf("\n --------------- BOT ----------------\n");
         printf("1. dumbfuck\n");
         printf("2. lineblock\n");
+        printf("3. winningmove\n");
 
         char tmpbc;
         do
@@ -116,8 +117,12 @@ int main(
             selectedBot = 2;
             strcpy(player2, "[lineblock]");
             break;
+        case '3':
+            selectedBot = 3;
+            strcpy(player2, "[winningmove]");
+            break;
         default:
-            printf("Scelta non valida, fallback su [bot stupido] \n");   
+            printf("Scelta non valida, fallback su [dumbfuck] \n");   
             selectedBot = 1;
             break;
         }
@@ -189,7 +194,7 @@ int main(
         {
             // gioca il bot
             if(debug_enabled) fprintf(stderr, "--- \n chiedendo posizione inserimento (giocatore corrente %d) \n", currentPlayer);
-            printf("%s sta pensando... ", player2);
+            printf("%s sta pensando... \n", player2);
             TRIS_delay(1000);
             
             // chiamata AI
@@ -224,17 +229,26 @@ int main(
             do
             {
                 if(debug_enabled) fprintf(stderr, "--- \n chiedendo posizione inserimento (giocatore corrente %d) \n", currentPlayer);
-                // input coordinate
-                printf("Dove inserisco %s? [1-9]: ", TRIS_p2c(currentPlayer+3));
-                scanf("%d", &pos);
-                pos--; // aggiusta da 0 ad 8
+                int c;
+
+                do 
+                {
+                    printf("Dove inserisco %s? [1-9]: ", TRIS_p2c(currentPlayer+3));
+                    c = scanf ("%d", &pos);
+                    if (c == 0) 
+                    {
+                        scanf ("%*[^\n ]");
+                        printf ("Posizione non valida! \n");
+                    }
+                } 
+                while (c == 0);
             } 
             while 
             (
                 !TRIS_set_grid
                 (
                     grid,
-                    pos,
+                    pos-1,
                     currentPlayer
                 )
             );

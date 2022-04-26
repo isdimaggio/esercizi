@@ -31,6 +31,10 @@ int TRIS_ai_wrapper
         return TRIS_internal_aiv2(grid);
         break;
 
+    case 3:
+        return TRIS_internal_aiv3(grid);
+        break;
+
     default:
         return TRIS_internal_aiv1(grid);
         break;
@@ -51,6 +55,11 @@ int TRIS_internal_aiv1 (int grid[9])
 }
 
 int TRIS_internal_aiv2 (int grid[9])
+{
+    return 5; // WIP
+}
+
+int TRIS_internal_aiv3 (int grid[9])
 {
     return 5; // WIP
 }

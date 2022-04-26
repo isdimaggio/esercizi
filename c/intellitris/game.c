@@ -25,7 +25,7 @@ bool TRIS_set_grid(
     int pos,
     int player
 ){
-    if(pos < 0 && pos > 8){
+    if(pos < 0 || pos > 8){
         printf("Posizione non valida! \n");
         return false; 
     }
