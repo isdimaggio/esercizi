@@ -62,7 +62,7 @@ int main(
     // chiedi i nomi dei giocatori
     printf("------------- PLAYER ---------------\n");
     printf("Inserisci il nome del giocatore 1 (0 - rosso): ");
-    scanf("%s", player1);
+    TRIS_scanf(127, &player1);
 
     // scelta tra bot e player
     char tmpb;
@@ -132,7 +132,7 @@ int main(
         if(debug_enabled) fprintf(stderr, "selezionato umano come secondo player \n");
 
         printf("Inserisci il nome del giocatore 2 (X - blu): ");
-        scanf("%s", player2);
+        TRIS_scanf(127, &player2);
     }
 
     if(debug_enabled) fprintf(stderr, "nomi player inseriti \n");

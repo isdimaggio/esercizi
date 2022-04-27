@@ -21,13 +21,14 @@ limitations under the License.
 #ifdef _WIN32
 #include <conio.h>
 #else
-#include <stdio.h>
 #include <unistd.h>
 #define clrscr() printf("\e[1;1H\e[2J")
 #endif
 
 #include <stdio.h>
+#include <stdlib.h>
 #include <time.h>
+#include <string.h>
 
 /*
  * Function: TRIS_setup_console
@@ -61,3 +62,17 @@ void TRIS_restore_console(void);
  *   returns: nothing
  */
 void TRIS_delay(int millisec);
+
+/*
+ * Function: TRIS_scanf
+ * ----------------------------
+ *   Input di stringhe con spazi
+ * 
+ *   maxsize: numero massimo di caratteri ammessi
+ *
+ *   returns: success 0 or failure 1
+ */
+int TRIS_scanf(
+    int maxSize, 
+    char *destination
+);

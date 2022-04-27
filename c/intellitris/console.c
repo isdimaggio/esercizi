@@ -81,3 +81,16 @@ void TRIS_delay(int millisec)
 }
 
 #endif
+
+int TRIS_scanf(int maxSize, char *destination) {
+    char *name = malloc(maxSize);
+    if (name == NULL) {
+        printf("No memory\n");
+        return 1;
+    }
+    fgets(name, maxSize, stdin);
+    if ((strlen(name) > 0) && (name[strlen (name) - 1] == '\n'))
+        name[strlen (name) - 1] = '\0';
+	strcpy(destination, name);
+    return 0;
+}
