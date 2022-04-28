@@ -146,7 +146,7 @@ int main(
     if(debug_enabled) fprintf(stderr, "reset della variabile griglia, inzio gioco \n");
 
     // per tutte le giocate possibili
-    for (int i = 0; i < 10; i++)
+    for (int i = 0; i < 9; i++)
     {
         clrscr();
 
@@ -157,7 +157,7 @@ int main(
         {
             // ha senso controllare solo dalla quinta...
             // ...giocata in poi
-            int wp = TRIS_winning_player(grid, debug_enabled);
+            int wp = TRIS_winning_player(grid);
             if(debug_enabled) fprintf(stderr, "player vincente: %d \n", wp);
             if (wp != -1)
             {

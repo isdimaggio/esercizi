@@ -15,10 +15,11 @@ limitations under the License.
 */
 
 #include "game.h"
+#include "winpatterns.h"
 
-const int winPatternsA[8] = {0, 1, 2, 0, 3, 6, 0, 6};
-const int winPatternsB[8] = {3, 4, 5, 1, 4, 7, 4, 4};
-const int winPatternsC[8] = {6, 7, 8, 2, 5, 8, 8, 2};
+const int wpa[8] = WPA;
+const int wpb[8] = WPB;
+const int wpc[8] = WPC;
 
 bool TRIS_set_grid(
     int grid[9], 
@@ -55,34 +56,22 @@ bool TRIS_set_grid(
 }
 
 int TRIS_winning_player(
-    int grid[9],
-    bool debug_enabled
+    int grid[9]
 ){
-    // cerca in tutti i pattern
-    for(int i = 0; i < 8; i++){
-        if(
-            grid[winPatternsA[i]] == grid[winPatternsB[i]] && 
-            grid[winPatternsB[i]] == grid[winPatternsC[i]]
-        ){
-            // se trovato uno vincente ritorna il codice giocatore
-            if (grid[winPatternsA[i]] == 3)
-            {
-                return 0;
-            }else if (grid[winPatternsA[i]] == 5)
-            {
-                return 1;
-            }
+    for(int i = 0; i < 8; i++)
+    {
+        int compute = grid[wpa[i]] * grid[wpb[i]] * grid[wpc[i]];
+        if(compute == 27) 
+        {
+            return 0;
         }
-        if(debug_enabled) fprintf(
-            stderr, "controllo pattern %d -> [%d][%d][%d] -> (%d)(%d)(%d) \n",
-            i,
-            winPatternsA[i],
-            winPatternsB[i],
-            winPatternsC[i],
-            grid[winPatternsA[i]],
-            grid[winPatternsB[i]],
-            grid[winPatternsC[i]]
-        );
+        else if (compute == 27)
+        {
+            return 1;
+        }
+        else
+        {
+            return -1;
+        }
     }
-    return -1;
 }

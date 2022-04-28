@@ -15,6 +15,11 @@ limitations under the License.
 */
 
 #include "ai.h"
+#include "winpatterns.h"
+
+const int wpax[8] = WPA;
+const int wpbx[8] = WPB;
+const int wpcx[8] = WPC;
 
 int TRIS_ai_wrapper
 (
@@ -43,7 +48,7 @@ int TRIS_ai_wrapper
 
 int TRIS_internal_aiv1 (int grid[9])
 {
-    // bot stupido
+    // bot stupido, solo per testare wrapper e logica di gioco
     // inserisce il suo segno nel primo posto disponibile
     for(int i = 0; i < 9; i++)
     {
@@ -56,7 +61,42 @@ int TRIS_internal_aiv1 (int grid[9])
 
 int TRIS_internal_aiv2 (int grid[9])
 {
-    return 5; // WIP
+    // Se UTENTE non ha mosso al centro CPU gioca al centro.
+    if (grid[4] == 1)
+    {
+        return 4;
+    }
+
+    //CPU controlla se c’è possibilità di tris su una linea o una diagonale, 
+    //se VERO gioca per bloccarla 
+    for(int i = 0; i < 8; i++)
+    {
+        int compute = grid[wpax[i]] * grid[wpbx[i]] * grid[wpcx[i]];
+        if(compute == 9) 
+        {
+            // trovata combinazione da bloccare
+            if(grid[wpax[i]] == 1)
+            {
+                return wpax[i];
+            }
+            else
+            {
+                if(grid[wpbx[i]] == 1)
+                    return wpbx[i];
+                else
+                    return wpcx[i];
+            }
+        }
+    }
+
+    // altrimenti CPU gioca su una cella libera (bot stupido)
+    for(int i = 0; i < 9; i++)
+    {
+        if(grid[i] == 1)
+        {
+            return i;
+        }
+    }
 }
 
 int TRIS_internal_aiv3 (int grid[9])
