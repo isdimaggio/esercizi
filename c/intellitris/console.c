@@ -83,6 +83,7 @@ void TRIS_delay(int millisec)
 #endif
 
 int TRIS_scanf(int maxSize, char *destination) {
+    // nuovo scanf
     char *name = malloc(maxSize);
     if (name == NULL) {
         printf("No memory\n");

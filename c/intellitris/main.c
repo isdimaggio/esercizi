@@ -130,8 +130,13 @@ int main(
     else
     {
         if(debug_enabled) fprintf(stderr, "selezionato umano come secondo player \n");
-
         printf("Inserisci il nome del giocatore 2 (X - blu): ");
+
+        // ripulisci buffer da scanf precedente
+        char tmp;
+        scanf("%c", &tmp);
+        write(STDIN_FILENO, "a", 1);
+        
         TRIS_scanf(127, &player2);
     }
 

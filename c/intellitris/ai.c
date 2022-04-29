@@ -101,5 +101,81 @@ int TRIS_internal_aiv2 (int grid[9])
 
 int TRIS_internal_aiv3 (int grid[9])
 {
-    return 5; // WIP
+    // Se UTENTE non ha mosso al centro CPU gioca al centro.
+    if (grid[4] == 1)
+    {
+        return 4;
+    }
+
+    // CPU controlla se c’è possibilità di tris PER LUI su una linea o una diagonale, 
+    // se VERO gioca per effettuarla immediatamente 
+    for(int i = 0; i < 8; i++)
+    {
+        int compute = grid[wpax[i]] * grid[wpbx[i]] * grid[wpcx[i]];
+        if(compute == 25) 
+        {
+            // trovata combinazione per vincere
+            if(grid[wpax[i]] == 1)
+            {
+                return wpax[i];
+            }
+            else
+            {
+                if(grid[wpbx[i]] == 1)
+                    return wpbx[i];
+                else
+                    return wpcx[i];
+            }
+        }
+    }
+
+    // CPU controlla se c’è possibilità di tris PER UTENTE su una linea o una diagonale, 
+    // se VERO gioca per bloccarla 
+    for(int i = 0; i < 8; i++)
+    {
+        int compute = grid[wpax[i]] * grid[wpbx[i]] * grid[wpcx[i]];
+        if(compute == 9) 
+        {
+            // trovata combinazione avversaria da bloccare
+            if(grid[wpax[i]] == 1)
+            {
+                return wpax[i];
+            }
+            else
+            {
+                if(grid[wpbx[i]] == 1)
+                    return wpbx[i];
+                else
+                    return wpcx[i];
+            }
+        }
+    }
+
+    //  CPU controlla se c’è una riga con una sua singola giocata
+    // nel caso ne aggiunge un altra
+    for(int i = 0; i < 8; i++)
+    {
+        int compute = grid[wpax[i]] * grid[wpbx[i]] * grid[wpcx[i]];
+        if(compute == 9) 
+        {
+            // trovata combinazione da bloccare
+            if(grid[wpax[i]] == 1)
+            {
+                return wpax[i];
+            }
+            else
+            {
+                return wpcx[i];
+            }
+        }
+    }
+
+    // altrimenti CPU gioca su una cella libera
+    for(int i = 0; i < 9; i++)
+    {
+        if(grid[i] == 1)
+        {
+            return i;
+        }
+    }
 }

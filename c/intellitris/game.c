@@ -65,7 +65,7 @@ int TRIS_winning_player(
         {
             return 0;
         }
-        else if (compute == 27)
+        else if (compute == 125)
         {
             return 1;
         }
