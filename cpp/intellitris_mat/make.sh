@@ -3,5 +3,5 @@ g++ \
 main.cpp \
 graphics.cpp \
 console.cpp \
-game.cpp #\
-#ai.c
+game.cpp \
+ai.cpp

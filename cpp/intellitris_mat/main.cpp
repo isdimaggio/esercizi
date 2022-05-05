@@ -21,6 +21,8 @@ limitations under the License.
 #include "console.h"
 #include "game.h"
 #include "graphics.h"
+#include "ai.h"
+#include "matrix.h"
 
 /*
  * Variable: TRIS_grid
@@ -41,20 +43,6 @@ std::string player1_name = "";
 std::string player2_name = "";
 
 char playerNameBuf[128] = "";
-
-void test_ai(){
-    for (int i = 0; i < 3; i++)
-    {
-        for (int j = 0; j < 3; j++)
-        {
-            if (TRIS_grid[i][j] == 1) 
-            {
-                TRIS_grid[i][j] = 5;
-                return;
-            }
-        }
-    }
-}
 
 int main(
     int argc, 
@@ -261,30 +249,26 @@ int main(
             TRIS_delay(1000);
 
             // chiamata AI
-            //int pos = TRIS_ai_wrapper
-            //(
-            //    TRIS_v_selectedBot, 
-            //    TRIS_grid
-            //);
+            TRIS_coords pos = TRIS_ai_wrapper
+            (
+                TRIS_v_selectedBot, 
+                TRIS_grid
+            );
 
-            //bool res = TRIS_set_grid
-            //(
-            //    TRIS_grid,
-            //    pos,
-            //    TRIS_v_currentPlayer
-            //);
-
-            //if(!res) 
-            //{
-            //    std:: cout  << "[!] Exception occurred: " 
-            //                << player2_name 
-            //                << " ha provato a inserire una giocata nella cella "
-            //                << pos
-            //                << " gia occupata";
-            //    return(0);
-            //}
-
-            test_ai();
+            if (TRIS_grid[pos.x][pos.y] == 1)
+            {
+                // se la cella è libera fai piazzare bot
+                TRIS_grid[pos.x][pos.y] = 5;
+            }
+            else
+            {
+                std:: cout  << "[!] Exception occurred: " 
+                            << player2_name 
+                            << " ha provato a inserire una giocata nella cella "
+                            << pos.x << ',' << pos.y
+                            << " gia occupata";
+                return(0);
+            }
         }
         else
         {
