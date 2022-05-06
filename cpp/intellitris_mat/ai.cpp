@@ -69,8 +69,52 @@ TRIS_coords TRIS_internal_aiv1 (int grid[3][3])
 
 TRIS_coords TRIS_internal_aiv2 (int grid[3][3])
 {
-    // bot stupido, solo per testare wrapper e logica di gioco
-    // inserisce il suo segno nel primo posto disponibile
+    // Se UTENTE non ha mosso al centro CPU gioca al centro.
+    if (grid[1][1] == 1)
+    {
+        return TRIS_coords(1,1);
+    }
+
+    // CPU controlla se c’è possibilità di tris PER UTENTE su una linea o una diagonale,
+    // se VERO gioca per bloccarla
+    for (int i = 0; i < 8; i++)
+    {
+        int compute =
+            grid[wp1_i_ai[i]][wp1_j_ai[i]] *
+            grid[wp2_i_ai[i]][wp2_j_ai[i]] *
+            grid[wp3_i_ai[i]][wp3_j_ai[i]];
+
+        if (compute == 9)
+        {
+            // trovata combinazione per bloccare
+            if (grid[wp1_i_ai[i]][wp1_j_ai[i]] == 1)
+            {
+                return TRIS_coords(
+                    wp1_i_ai[i],
+                    wp1_j_ai[i]
+                );
+            }
+            else
+            {
+                if (grid[wp2_i_ai[i]][wp2_j_ai[i]] == 1)
+                {
+                    return TRIS_coords(
+                        wp2_i_ai[i],
+                        wp2_j_ai[i]
+                    );
+                }
+                else
+                {
+                    return TRIS_coords(
+                        wp3_i_ai[i],
+                        wp3_j_ai[i]
+                    );
+                }
+            }
+        }
+    }
+
+    // altrimenti CPU gioca su una cella libera
     for (int i = 0; i < 3; i++)
     {
         for (int j = 0; j < 3; j++)
@@ -85,8 +129,91 @@ TRIS_coords TRIS_internal_aiv2 (int grid[3][3])
 
 TRIS_coords TRIS_internal_aiv3 (int grid[3][3])
 {
-    // bot stupido, solo per testare wrapper e logica di gioco
-    // inserisce il suo segno nel primo posto disponibile
+    // Se UTENTE non ha mosso al centro CPU gioca al centro.
+    if (grid[1][1] == 1)
+    {
+        return TRIS_coords(1,1);
+    }
+
+    // CPU controlla se c’è possibilità di tris PER LUI su una linea o una diagonale,
+    // se VERO gioca per effettuarla immediatamente
+    for (int i = 0; i < 8; i++)
+    {
+        int compute =
+            grid[wp1_i_ai[i]][wp1_j_ai[i]] *
+            grid[wp2_i_ai[i]][wp2_j_ai[i]] *
+            grid[wp3_i_ai[i]][wp3_j_ai[i]];
+
+        if (compute == 25)
+        {
+            // trovata combinazione per bloccare
+            if (grid[wp1_i_ai[i]][wp1_j_ai[i]] == 1)
+            {
+                return TRIS_coords(
+                    wp1_i_ai[i],
+                    wp1_j_ai[i]
+                );
+            }
+            else
+            {
+                if (grid[wp2_i_ai[i]][wp2_j_ai[i]] == 1)
+                {
+                    return TRIS_coords(
+                        wp2_i_ai[i],
+                        wp2_j_ai[i]
+                    );
+                }
+                else
+                {
+                    return TRIS_coords(
+                        wp3_i_ai[i],
+                        wp3_j_ai[i]
+                    );
+                }
+            }
+        }
+    }
+
+    // CPU controlla se c’è possibilità di tris PER UTENTE su una linea o una diagonale,
+    // se VERO gioca per bloccarla
+    for (int i = 0; i < 8; i++)
+    {
+        int compute =
+            grid[wp1_i_ai[i]][wp1_j_ai[i]] *
+            grid[wp2_i_ai[i]][wp2_j_ai[i]] *
+            grid[wp3_i_ai[i]][wp3_j_ai[i]];
+
+        if (compute == 9)
+        {
+            // trovata combinazione per bloccare
+            if (grid[wp1_i_ai[i]][wp1_j_ai[i]] == 1)
+            {
+                return TRIS_coords(
+                    wp1_i_ai[i],
+                    wp1_j_ai[i]
+                );
+            }
+            else
+            {
+                if (grid[wp2_i_ai[i]][wp2_j_ai[i]] == 1)
+                {
+                    return TRIS_coords(
+                        wp2_i_ai[i],
+                        wp2_j_ai[i]
+                    );
+                }
+                else
+                {
+                    return TRIS_coords(
+                        wp3_i_ai[i],
+                        wp3_j_ai[i]
+                    );
+                }
+            }
+        }
+    }
+
+    // altrimenti CPU gioca su una cella libera
     for (int i = 0; i < 3; i++)
     {
         for (int j = 0; j < 3; j++)
