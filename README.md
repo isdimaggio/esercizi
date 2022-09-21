@@ -1,7 +1,10 @@
 # esercizi
 Raccolta di esercizi di informatica e #cosevarie
 
-Header esercizi:    
+**JAVADOC** (per esercizi Java): https://isdimaggio.github.io/esercizi/   
+**TRIS CON CPU E GUI**: https://github.com/isdimaggio/esercizi/tree/main/c/intellitris
+
+Header di licenza esercizi:    
 ```
 /*
 Copyright 2021 Lo Mele Vittorio
