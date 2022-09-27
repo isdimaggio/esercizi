@@ -31,8 +31,8 @@ import java.util.Objects;
 public class Main {
 
     /**
-     * Programma che ricevuti in input i dati di base ed altezza di due
-     * rettangoli confronta perimetri ed aree e determina i maggiori.
+     * Programma che ricevuti in ingresso i dati di base e altezza di due
+     * rettangoli confronta perimetri e aree e determina i maggiori.
      *
      * @param args array di 4 float nell'ordine [b1] [h1] [b2] [h2]
      * @throws RuntimeException in caso di errori di calcolo
@@ -40,13 +40,13 @@ public class Main {
     public static void main(String[] args) {
         String argomento1 = args[0]; // base 1 o flag di help
 
-        Rettangolo primoRettangolo = null;
-        Rettangolo secondoRettangolo = null;
+        Rettangolo primoRettangolo;
+        Rettangolo secondoRettangolo;
 
-        float base1 = 0;
-        float altezza1 = 0;
-        float base2 = 0;
-        float altezza2 = 0;
+        float base1;
+        float altezza1;
+        float base2;
+        float altezza2;
 
         try {
             // in caso di flag --help mostra aiuto

@@ -34,7 +34,7 @@ public class Rettangolo {
     private float altezza;
 
     /**
-     * Crea un nuovo rettangolo con base ed altezza specificati
+     * Crea un nuovo rettangolo con base e altezza specificati
      * se diversi da zero
      *
      * @param base    base del rettangolo
