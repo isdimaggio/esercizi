@@ -25,6 +25,16 @@ package EsercizioPunti;
 public class Segmento {
 
     /**
+     * Punto iniziale del segmento
+     */
+    private final Punto puntoA;
+
+    /**
+     * Punto finale del segmento
+     */
+    private final Punto puntoB;
+
+    /**
      * Crea un nuovo segmento con punto d' inizio e fine specificati
      *
      * @param a punto d'inizio del segmento
@@ -32,7 +42,7 @@ public class Segmento {
      * @throws Exception se i punti forniti sono uguali
      * @see Punto
      */
-    Segmento(Punto a, Punto b) throws Exception {
+    public Segmento(Punto a, Punto b) throws Exception {
 
         if (a.getCoordY() == b.getCoordY() &&
                 b.getCoordX() == b.getCoordX()
@@ -44,16 +54,6 @@ public class Segmento {
         puntoA = a;
         puntoB = b;
     }
-
-    /**
-     * Punto iniziale del segmento
-     */
-    private final Punto puntoA;
-
-    /**
-     * Punto finale del segmento
-     */
-    private final Punto puntoB;
 
     // getters
     public Punto getPuntoA() {
@@ -75,11 +75,11 @@ public class Segmento {
     }
 
     /**
-     * Ritorna vero se il segmento interseca l'asse X
+     * Ritorna vero se il segmento interseca l'asse Y
      *
      * @return bool
      */
-    public boolean intersezioneAsseX() {
+    public boolean intersezioneAsseY() {
         // se una delle due x ha il segno opposto all'altro
 
         if (puntoA.getCoordX() >= 0 && puntoB.getCoordX() < 0) {
@@ -90,11 +90,11 @@ public class Segmento {
     }
 
     /**
-     * Ritorna vero se il segmento interseca l'asse Y
+     * Ritorna vero se il segmento interseca l'asse X
      *
      * @return bool
      */
-    public boolean intersezioneAsseY() {
+    public boolean intersezioneAsseX() {
         // se una delle due y ha il segno opposto all'altro
 
         if (puntoA.getCoordY() >= 0 && puntoB.getCoordY() < 0) {
@@ -110,14 +110,7 @@ public class Segmento {
      * @return bool
      */
     public boolean passaggioPerOrigine() {
-        // inversione coordinate di b
-        float xb = puntoB.getCoordX();
-        xb = -xb;
-        float yb = puntoB.getCoordY();
-        yb = -yb;
-
-        // se le coordinate invertite sono uguali
-        return puntoA.getCoordX() == xb && puntoA.getCoordY() == yb;
+        return puntoA.getCoordY() / puntoA.getCoordX() == puntoB.getCoordY() / puntoB.getCoordX();
     }
 
 }

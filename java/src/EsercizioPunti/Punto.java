@@ -40,7 +40,7 @@ public class Punto {
      * @param y coordinata delle y
      * @see Float
      */
-    Punto(float x, float y) {
+    public Punto(float x, float y) {
         coordY = y;
         coordX = x;
     }
