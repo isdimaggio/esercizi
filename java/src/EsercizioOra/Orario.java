@@ -17,7 +17,7 @@ limitations under the License.
 package EsercizioOra;
 
 /**
- * Rappresenta un conto corrente.
+ * Rappresenta un orario.
  *
  * @author Vittorio Lo Mele
  * @author hi@vitto.dev
