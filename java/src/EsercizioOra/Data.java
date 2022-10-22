@@ -63,7 +63,7 @@ public class Data {
         setAnno(anno);
 
         // se bisestile febbraio ha 29 gg
-        if (isBisestile()) ggMesi[2] = 29;
+        if (isBisestile()) ggMesi[1] = 29;
 
         setMese(mese);
         setGiorno(giorno);
