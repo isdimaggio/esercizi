@@ -1,0 +1,155 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+
+.spo {
+    margin-right: 5px;
+}
+
+.ddc {
+    border-right: 1px solid #ddd;
+    padding: 0 5px 0 5px;
+}
+
+.ddcc {
+    padding: 0; 
+    border-bottom: 1px solid #ddd;
+}
+
+.dccd {
+    border-left: 1px solid #ddd;
+}
+
+.logocustom {
+    padding-right: 13px;
+}
+
+.mtb4 {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.grayy {
+    background-color: #eee;
+}
+
+.gray2 {
+    background-color: #f9f9f9;
+}
+
+.pagination {
+    --bs-pagination-active-bg: #6C757D !important;
+    --bs-pagination-active-border-color: #6C757D !important;
+    --bs-pagination-color: #6C757D !important;
+    --bs-pagination-hover-color: #6C757D !important;
+}
+
+body {
+    --bs-focus-ring-color: rgba(108, 117, 125, 0.25) !important;
+    --bs-accordion-btn-focus-box-shadow: 0 0 0 0.25rem rgba(108, 117, 125, 0.25) !important;
+}
+
+table.table.dataTable.table-striped>tbody>tr:nth-of-type(2n+1).selected>* {
+    box-shadow: inset 0 0 0 9999px rgba(108, 117, 125, 0.95) !important;
+}
+
+table.table.dataTable>tbody>tr.selected>* {
+    box-shadow: inset 0 0 0 9999px rgba(108, 117, 125, 0.95) !important;
+}
+
+main {
+    margin: 15px 15px 15px 15px;
+}
+
+.breadcrumb {
+    margin-bottom: 0px !important;
+    padding: 6px 6px 6px 15px;
+}
+
+.accordion {
+    --bs-accordion-active-bg: #EEEEEE !important;
+}
+
+.username {
+    margin-left: 5px;
+    font-weight: bold;
+    padding-top: 7px;
+    display: inline-block;
+    color: #585858;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 100;
+}
+
+.overlay-content {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #f4f4f4;
+    padding: 10px;
+    width: 80%;
+    max-width: 500px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.select-info {
+    display: none !important;
+}
+
+@media print
+{    
+    .noprint, .noprint *
+    {
+        display: none !important;
+    }
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    color: rgb(163, 163, 163);
+    background-color: white;
+}
+
+#map {
+    width: 100%;
+    height: 500px !important;
+}
+
+.flex-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.noprint {
+    @media print {
+        .noprint,
+        .noprint * {
+            display: none !important;
+        }
+    }
+}
+
+.table-banner {
+    background-color: #f9f9f9;
+    padding: 10px;
+    border: 1px solid #C6C7C8;
+    border-bottom: none;
+}
+
+
+tr td:last-child {
+    width: 1%;
+    white-space: nowrap;
+}

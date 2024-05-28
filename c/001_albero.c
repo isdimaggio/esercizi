@@ -18,6 +18,7 @@ ESERCIZIO n.1 - Albero di natale in ASCII... scalabile!
 */
 
 #include <stdio.h>
+#include <stdlib.h>
 #include <stdbool.h>
 #include <time.h>
 
